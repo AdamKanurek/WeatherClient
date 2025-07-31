@@ -1,9 +1,13 @@
+import WeatherForecastTable from "./weatherForecast/weatherForecastTable";
 
 function App() {
 
 
   return (
-    <h1>Ahoj</h1>
+    <div className="app">
+      <h1>Předpověd počasí</h1>
+      <WeatherForecastTable />
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ export const apiGet = (url, params = {}) => {
         ...params,
         appid: API_KEY,
         units: 'metric',
-        lang: 'cs'
+        lang: 'cz'
     }
     const queryParams = new URLSearchParams(fullParams);
     const fullUrl = `${API_URL}${url}?${queryParams.toString()}`;
@@ -20,7 +20,7 @@ export const apiGet = (url, params = {}) => {
 };
 
 export const loadLocalJson = (filename) => {
-    return fetch(`${process.env.PUBLIC_URL}/${filename}`)
+    return fetch(`/${filename}`)
         .then((res) => {
             if(!res.ok) {
                 throw new Error(`Error loading local file: ${res.status}`);

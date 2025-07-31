@@ -53,7 +53,7 @@ const InputField = ({
             {suggestions.length > 0 && (
                 <ul className="suggestions">
                     {suggestions.map((item, i) => (
-                        <li key={i} onClick={() => handleSelect(item)}>
+                        <li key={i} onMouseDown={() => handleSelect(item)}>
                             {item[labelKey]}
                         </li>
                     ))}
