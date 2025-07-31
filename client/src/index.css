@@ -1,1 +1,40 @@
 
+
+/* input field */
+.input-field {
+  position: relative;
+  width: 100%;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-field .suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
+
+.input-field .suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.input-field .suggestions li:hover {
+  background: #f0f0f0;
+}
