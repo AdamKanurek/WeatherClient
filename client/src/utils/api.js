@@ -20,7 +20,7 @@ export const apiGet = (url, params = {}) => {
 };
 
 export const loadLocalJson = (filename) => {
-    return fetch(`/${filename}`)
+    return fetch(`${import.meta.env.BASE_URL}${filename}`)
         .then((res) => {
             if(!res.ok) {
                 throw new Error(`Error loading local file: ${res.status}`);
