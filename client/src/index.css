@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -120,7 +119,6 @@ body {
   margin-top: 24px;
   font-size: 1.2rem;
   color: #0077cc;
-
 }
 
 .weather-description {
@@ -129,7 +127,12 @@ body {
 }
 
 .weather-icon {
-  float:left;
+  float: left;
+}
+
+.weather-table .col-humidity,
+.weather-table .col-wind {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -147,5 +150,10 @@ body {
 
   .input-field input {
     font-size: 1.05rem;
+  }
+
+  .weather-table .col-humidity,
+  .weather-table .col-wind {
+    display: table-cell;
   }
 }

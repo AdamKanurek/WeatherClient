@@ -54,11 +54,11 @@ const WeatherForecastTable = () => {
                     <table className="weather-table">
                         <thead>
                             <tr>
-                                <th>Datum</th>
-                                <th>Počasí</th>
-                                <th>Teplota</th>
-                                <th>Vlhkost</th>
-                                <th>Vítr</th>
+                                <th className="col-date">Datum</th>
+                                <th className="col-weather">Počasí</th>
+                                <th className="col-temp">Teplota</th>
+                                <th className="col-humidity">Vlhkost</th>
+                                <th className="col-wind">Vítr</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,8 +76,8 @@ const WeatherForecastTable = () => {
 
                                     return (
                                         <tr key={item.dt}>
-                                            <td>{date}</td>
-                                            <td>
+                                            <td className="col-date">{date}</td>
+                                            <td className="col-weather">
                                                 <img
                                                     src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
                                                     alt={weather.description}
@@ -86,9 +86,9 @@ const WeatherForecastTable = () => {
                                                 />
                                                 <span className="weather-description">{weather.description}</span>
                                             </td>
-                                            <td>{Math.round(temp)}°C</td>
-                                            <td>{humidity}%</td>
-                                            <td>{windSpeed}m/s</td>
+                                            <td className="col-temp">{Math.round(temp)}°C</td>
+                                            <td className="col-humidity">{humidity}%</td>
+                                            <td className="col-wind">{windSpeed}m/s</td>
                                         </tr>
                                     );
                                 })}
