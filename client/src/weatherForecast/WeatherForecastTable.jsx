@@ -49,26 +49,52 @@ const WeatherForecastTable = () => {
             {!selectedCity && <p>Zadejte město pro zobrazení předpovědi.</p>}
 
             {forecast && (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Datum</th>
-                            <th>Teplota</th>
-                            <th>Popis</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {forecast.list
-                            .filter((item) => item.dt_txt.includes('12:00:00'))
-                            .map((item, idx) => (
-                                <tr key={idx}>
-                                    <td>{new Date(item.dt * 1000).toLocaleDateString()}</td>
-                                    <td>{Math.round(item.main.temp)} °C</td>
-                                    <td>{item.weather[0].description}</td>
-                                </tr>
-                            ))}
-                    </tbody>
-                </table>
+                <div>
+                    <h2 className="table-h2">Předpověď počasí pro: {selectedCity.name}</h2>
+                    <table className="weather-table">
+                        <thead>
+                            <tr>
+                                <th>Datum</th>
+                                <th>Počasí</th>
+                                <th>Teplota</th>
+                                <th>Vlhkost</th>
+                                <th>Vítr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {forecast.list
+                                .filter((item) => item.dt_txt.includes("12:00:00"))
+                                .map((item) => {
+                                    const date = new Date(item.dt * 1000).toLocaleDateString(undefined, {
+                                        weekday: "short",
+                                        day: "numeric",
+                                        month: "short",
+                                    });
+                                    const { temp, humidity } = item.main;
+                                    const windSpeed = item.wind.speed;
+                                    const weather = item.weather[0];
+
+                                    return (
+                                        <tr key={item.dt}>
+                                            <td>{date}</td>
+                                            <td>
+                                                <img
+                                                    src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
+                                                    alt={weather.description}
+                                                    title={weather.description}
+                                                    className="weather-icon"
+                                                />
+                                                <span className="weather-description">{weather.description}</span>
+                                            </td>
+                                            <td>{Math.round(temp)}°C</td>
+                                            <td>{humidity}%</td>
+                                            <td>{windSpeed}m/s</td>
+                                        </tr>
+                                    );
+                                })}
+                        </tbody>
+                    </table>
+                </div>
             )}
         </div>
     );

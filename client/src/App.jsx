@@ -1,11 +1,10 @@
-import WeatherForecastTable from "./weatherForecast/weatherForecastTable";
+import WeatherForecastTable from "./weatherForecast/WeatherForecastTable";
 
 function App() {
-
-
+  
   return (
     <div className="app">
-      <h1>Předpověd počasí</h1>
+      <h1>WeatherClient</h1>
       <WeatherForecastTable />
     </div>
   )
