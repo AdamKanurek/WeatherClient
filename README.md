@@ -28,7 +28,7 @@ npm run build
 npm run deploy
 ```
 
-App is deployed using `gh-pages` and final build is in `dist`.
+App is deployed using `gh-pages` and final build is in `dist`. https://adamkanurek.github.io/WeatherClient/
 
 ## Project structure
 
