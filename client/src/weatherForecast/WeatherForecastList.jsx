@@ -1,12 +1,17 @@
 import { useState } from 'react';
 
+// Component that displays a list of daily weather forecasts
 const WeatherForecastList = ({ forecast }) => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  // Track which forecast item is currently expanded
+  const [expandedIndex, setExpandedIndex] = useState(null); 
+
+  // Toggle expand/collapse of a forecast item
+  const toggleExpand = (index) => { 
+    setExpandedIndex(expandedIndex === index ? null : index); 
   };
 
+  // Filter forecast data to show only entries at 12:00 PM each day
   const dailyForecasts = forecast.list.filter(item =>
     item.dt_txt.includes("12:00:00")
   );

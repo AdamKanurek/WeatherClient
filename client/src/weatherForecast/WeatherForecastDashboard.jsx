@@ -3,12 +3,14 @@ import InputField from "../components/InputField";
 import WeatherForecastList from "./WeatherForecastList";
 import { loadLocalJson, getForecastByCityId } from "../utils/api";
 
+// Main dashboard component for displaying the weather forecast
 const WeatherForecastDashboard = () => {
-    const [cities, setCities] = useState([]);
-    const [selectedCity, setSelectedCity] = useState(null);
-    const [forecast, setForecast] = useState(null);
-    const [error, setError] = useState(null);
+    const [cities, setCities] = useState([]);                // List of available cities (from local JSON)
+    const [selectedCity, setSelectedCity] = useState(null);  // Currently selected city
+    const [forecast, setForecast] = useState(null);          // Forecast data fetched from API
+    const [error, setError] = useState(null);                // Error message (if any)
 
+    // Load list of cities from local JSON file once on component mount
     useEffect(() => {
         loadLocalJson('city.list.json')
             .then(setCities)
@@ -18,6 +20,7 @@ const WeatherForecastDashboard = () => {
             });
     }, []);
 
+    // Fetch weather forecast when a city is selected
     useEffect(() => {
         if (!selectedCity) {
             setForecast(null);
@@ -32,9 +35,10 @@ const WeatherForecastDashboard = () => {
             });
     }, [selectedCity]);
 
+    // Handle city selection from the input field
     const handleSelect = (city) => {
         setSelectedCity(city);
-        setError(null);
+        setError(null); // Clear previous error if any
     };
 
     return (
