@@ -40,8 +40,8 @@ const WeatherForecastList = ({ forecast }) => {
             </div>
 
             <div className={`forecast-details ${isExpanded ? 'expanded' : ''}`}>
-              <span>💧vlhkost: {humidity}%</span>
-              <span>💨rychlost větru: {windSpeed}m/s</span>
+              <span>vlhkost: {humidity}%</span>
+              <span>rychlost větru: {windSpeed}m/s</span>
             </div>
           </li>
         );
