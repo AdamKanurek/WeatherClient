@@ -50,7 +50,7 @@ App is responsive - optimalised for mobile devices and desktop.
 
 ## API Key
 
-For proper operation you need to have your api key from OpenWeatherMap API:
+For proper operation you need to have your own API key from OpenWeatherMap API:
 
 replace my key in `src/utils/api.js` in a variable `API_KEY`
 
