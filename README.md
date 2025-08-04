@@ -6,7 +6,7 @@ Simple application that displays 5 day weather forecast for selected city. Weath
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/uzivatel/weather-forecast-app.git
+   git clone https://github.com/AdamKanurek/WeatherClient
    ```
 
 2. Install dependencies:
