@@ -60,3 +60,5 @@ replace my key in `src/utils/api.js` in a variable `API_KEY`
 - Vite
 - CSS
 - OpenWeatherMap API
+
+Project was created only as a demo for job apply. I would not make API key this vulnerable, but in this demo project it didnt really matter. 
